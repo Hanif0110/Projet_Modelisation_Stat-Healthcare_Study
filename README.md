@@ -2,84 +2,82 @@
 
 ## 🎯 Objectif du projet
 
-Ce projet a pour objectif d'étudier les facteurs influençant :
-
+Étudier les facteurs influençant :
 - Le **coût des soins médicaux** (`Billing Amount`)
-- La **durée d’hospitalisation** (`Hospital Stay`)
+- La **durée d’hospitalisation** (`Hospital Stay (Days)`)
 - Les **résultats médicaux** (`Test Results`)
 
-à partir de données patients synthétiques, dans le but de :
-
-- Mieux comprendre les tendances hospitalières,
-- Identifier des leviers d’optimisation de la gestion médicale et économique,
-- Préparer un modèle prédictif sur les résultats médicaux.
+à partir de données synthétiques de patients hospitalisés, afin de :
+- Mieux comprendre les tendances hospitalières
+- Identifier des leviers d’optimisation de la gestion médicale et économique
+- Préparer des modèles prédictifs pour les coûts et les résultats médicaux
 
 ---
 
 ## 📁 Données utilisées
 
-Le dataset est un jeu de données **synthétique** représentant des informations réalistes sur des patients hospitalisés :
-- Données personnelles : `Age`, `Gender`, `Blood Type`
-- Données médicales : `Medical Condition`, `Test Results`, `Medication`
-- Données administratives : `Admission Type`, `Date of Admission`, `Discharge Date`
-- Données financières : `Billing Amount`, `Insurance Provider`
+Le jeu de données synthétique contient :
+- **Données personnelles** : `Age`, `Gender`, `Blood Type`
+- **Données médicales** : `Medical Condition`, `Medication`, `Test Results`
+- **Données administratives** : `Admission Type`, `Date of Admission`, `Discharge Date`
+- **Données financières** : `Billing Amount`, `Insurance Provider`
 
 ---
 
-## 🧪 Étapes de l’analyse
+## 🧪 Plan de l’analyse
 
-Chaque partie ci-dessous s’intègre dans un notebook Jupyter où **l'analyse statistique est mise en avant** avec des justifications théoriques (formules LaTeX) et des visualisations.
+Chaque partie est réalisée dans un notebook Jupyter, avec :
+- Des **cellules Markdown** pour expliquer les notions et formules (LaTeX)
+- Des **cellules Python** pour exécuter le code et afficher les résultats
 
-### 🟨 Partie 1 – Statistiques univariées
-> **Objectif** : Étudier la distribution de la variable `Billing Amount` pour identifier sa tendance centrale, sa dispersion et ses extrêmes.
+### 🟨 Partie 1 – Statistiques univariées  
+**But** : Explorer la distribution de `Billing Amount` (moyenne, dispersion, extrêmes)
 
----
+### 🟩 Partie 2 – Corrélation  
+**But** : Mesurer le lien linéaire entre `Age` et `Billing Amount`
 
-### 🟩 Partie 2 – Corrélation
-> **Objectif** : Évaluer le lien entre l’âge du patient et le montant facturé (`Age` vs `Billing Amount`) pour détecter une possible influence linéaire.
+### 🟦 Partie 3 – Test de moyenne (genre)  
+**But** : Comparer les coûts moyens hommes vs femmes
 
----
+### 🟪 Partie 4 – ANOVA (type d’admission)  
+**But** : Vérifier si le motif d’admission influence le coût
 
-### 🟦 Partie 3 – Test de moyenne (par genre)
-> **Objectif** : Vérifier si les coûts moyens diffèrent entre hommes et femmes (`Billing Amount` selon `Gender`).
+### 🟥 Partie 5 – Valeurs aberrantes  
+**But** : Détecter et traiter les factures incohérentes ou extrêmes
 
----
+### 🟧 Partie 6 – Données manquantes  
+**But** : Identifier et gérer les valeurs manquantes
 
-### 🟪 Partie 4 – ANOVA selon le type d’admission
-> **Objectif** : Mesurer l’impact du `Admission Type` sur le coût (`Billing Amount`), et détecter des différences significatives.
+### 🟫 Partie 7 – Régression linéaire multiple  
+**But** : Modéliser `Billing Amount` à partir de plusieurs variables explicatives
 
----
+### 🟨 Partie 8 – Régression polynomiale  
+**But** : Capturer d’éventuelles relations non linéaires sur `Billing Amount`
 
-### 🟥 Partie 5 – Valeurs aberrantes
-> **Objectif** : Identifier les factures incohérentes (trop faibles ou négatives) et les outliers afin d'assainir les données.
-
----
-
-### 🟧 Partie 6 – Données manquantes
-> **Objectif** : Diagnostiquer et traiter les valeurs manquantes pour éviter les biais d’analyse et assurer la robustesse des modèles.
-
----
-
-### 🟫 Partie 7 – Régression linéaire
-> **Objectif** : Prédire le coût (`Billing Amount`) à partir des variables explicatives : âge, durée d’hospitalisation, type d’admission, etc.
+### 🟩 Partie 9 – Classification supervisée  
+**But** : Prédire `Test Results` (Normal / Abnormal / Inconclusive) via régression logistique
 
 ---
 
-### 🟨 Partie 8 – Analyse de la variable `Test Results`
-> **Objectif** : Étudier la distribution et les facteurs associés aux résultats médicaux (`Normal`, `Abnormal`, `Inconclusive`) afin de préparer une tâche de classification.
+## 📚 Technologies et bibliothèques
+
+- **Langage** : Python (Jupyter Notebook)  
+- **Manipulation et calcul** : pandas, numpy  
+- **Visualisation** : matplotlib, seaborn  
+- **Statistiques et tests** : scipy.stats, statsmodels  
+- **Machine Learning** : scikit-learn  
+- **Formules** : LaTeX dans les cellules Markdown  
 
 ---
 
-### 🟩 Partie 9 – Classification supervisée (à venir)
-> **Objectif** : Construire un modèle de prédiction des `Test Results` à partir des variables disponibles. Cette partie mobilisera des algorithmes de machine learning supervisé.
+## 🤝 Collaboration
+
+Ce projet est développé en groupe.  
+Pour contribuer :
+1. Crée une branche dédiée  
+2. Ajoute ou modifie du contenu dans le notebook **etude.ipynb**  
+3. Propose une pull request dans ce dépôt  
 
 ---
 
-## 📚 Technologies utilisées
-
-- Python (Jupyter)
-- Pandas, NumPy, Matplotlib, Seaborn
-- SciPy, Statsmodels
-- LaTeX pour l’affichage des formules
-
----
+> **Remarque** : Les scripts Python et les formules LaTeX sont commentés et justifiés dans le notebook pour assurer la traçabilité de chaque étape d’analyse.  
