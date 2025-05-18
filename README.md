@@ -1,5 +1,12 @@
 # 🏥 Projet de Modélisation Statistique – Analyse du Parcours Patient
 
+## Collaborateurs
+
+- Imen BEN MANSOUR
+- Alban PRUVOST
+- Ariel DJOUE
+- Hanif NIZAMUDDIN MOHAMED HANIF
+
 ## 🎯 Objectif du projet
 
 Étudier les facteurs influençant :
